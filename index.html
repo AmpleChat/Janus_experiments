@@ -15,40 +15,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/6.4.0/adapter.min.js" ></script>
 <!--    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>-->
 <!--    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>-->
-    <script type="text/javascript" src="janus.js" ></script>
-
-    <script >
-
-        var server = "wss://54.193.51.199:8989/ws";
-
-
-        var janus = null;
-        var sfutest = null;
-        var opaqueId = "videoroomtest-" + Janus.randomString(12);
-
-        var myroom = 1234;	// Demo room
-        var myusername = "yyyy";
-        var myid = null;
-        var mystream = null;
-        // We use this other ID just to map our subscriptions to us
-        var mypvtid = null;
-
-        var feeds = [];
-        var bitrateTimer = [];
-
-        // var doSimulcast = (getQueryStringValue("simulcast") === "yes" || getQueryStringValue("simulcast") === "true");
-        // var doSimulcast2 = (getQueryStringValue("simulcast2") === "yes" || getQueryStringValue("simulcast2") === "true");
-        var doSimulcast = true;
-        var doSimulcast2 = false;
-
-    </script>
-    <script type="text/javascript" src="videoroomtest.js"></script>
-
-    <script>
-
-
-
-    </script>
 <!--    <link rel="stylesheet" href="css/demo.css" type="text/css"/>-->
 <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css"/>-->
 </head>
@@ -153,9 +119,15 @@
 <!--Maintime Time stamp for Peers-->
 <script src="js/timekeeper.js"></script>
 <script>
+    //Signaller
+    // var webrtcserver = "https://" + location.hostname + ":8083/";
+    // var signallerserver = "https://" + location.hostname + ":8085/";
+
+    var webrtcserver = "https://dev.brightchats.com:8083/";
+    var signallerserver = "https://dev.brightchats.com:8085/";
     var iceservers_array = [];
 
-    var role = "participant", out_A = true, out_V = true;
+    var role = "participant", out_A = false, out_V = false;
     var local, remote, incoming, outgoing;
     var webrtcdevobj = null;
     var webrtcdevsessionobj, sessionid, session;
@@ -305,6 +277,36 @@
     webrtcdevobj.startCall(webrtcdevsessionobj);
 
 </script>
+
+<script type="text/javascript" src="janus.js" ></script>
+
+<script >
+    // MCU Media server
+    var server = "wss://54.193.51.199:8989/ws";
+
+    var janus = null;
+    var sfutest = null;
+    var opaqueId = "videoroomtest-" + Janus.randomString(12);
+
+    var myroom = 1234;
+    var myusername = "yyyy";
+    var myid = null;
+    var mystream = null;
+    // We use this other ID just to map our subscriptions to us
+    var mypvtid = null;
+
+    var feeds = [];
+    var bitrateTimer = [];
+
+    // var doSimulcast = (getQueryStringValue("simulcast") === "yes" || getQueryStringValue("simulcast") === "true");
+    // var doSimulcast2 = (getQueryStringValue("simulcast2") === "yes" || getQueryStringValue("simulcast2") === "true");
+    var doSimulcast = true;
+    var doSimulcast2 = false;
+
+</script>
+<script type="text/javascript" src="videoroomtest.js"></script>
+
+
 
 <link rel=stylesheet href="node_modules/webrtcdevelopment/build/webrtcdevelopment_header.css">
 <link rel=stylesheet href="node_modules/webrtcdevelopment/build/webrtcdevelopment_min.css">
