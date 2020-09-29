@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     // Initialize the library (all console debuggers enabled)
     Janus.init({
@@ -33,7 +32,7 @@ $(document).ready(function () {
                                             request: "join",
                                             room: myroom,
                                             ptype: "publisher",
-                                            display:myusername
+                                            display: myusername
                                         };
                                         myusername = myusername;
                                         sfutest.send({message: register});
