@@ -5,3 +5,5 @@ export LD_LIBRARY_PATH=/usr/lib && \
   --config=janus.jcfg \
   -configs-folder=configs \
   -6 >/var/log/janus.log 2>&1 &
+
+tail -f /var /log/janus.log
