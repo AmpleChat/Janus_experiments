@@ -1,9 +1,10 @@
 general: {
-        configs_folder = "configs/"                                     # Configuration files folder
-        plugins_folder = "plugins/"                                     # Plugins folder
-        transports_folder = "transports/"                               # Transports folder
-        events_folder = "events/"                                        # Event handlers folder
-        loggers_folder = "loggers/"                                      # External loggers folder
+        configs_folder = "/opt/janus/etc/janus"                         # Configuration files folder
+        plugins_folder = "/opt/janus/lib/janus/plugins"                 # Plugins folder
+        transports_folder = "/opt/janus/lib/janus/transports"           # Transports folder
+        events_folder = "/opt/janus/lib/janus/events"                   # Event handlers folder
+        loggers_folder = "/opt/janus/lib/janus/loggers"                 # External loggers folder
+
 
         # The next settings configure logging
         #log_to_stdout = false                                          # Whether the Janus output should be written
